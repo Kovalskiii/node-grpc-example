@@ -1,0 +1,9 @@
+node_modules/
+build/*
+.idea/
+/process.env
+.vscode/
+.DS_Store
+
+main-server/node_modules/
+client-server/node_modules/

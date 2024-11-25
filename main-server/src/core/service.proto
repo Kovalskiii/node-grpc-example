@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package grpcService;
+
+service UserService {
+  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+  string userId = 1;
+}
+
+message GetUserPayload {
+  string userId = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+}
+
+message GetUserResponse {
+  string message = 1;
+  GetUserPayload payload = 2;
+}
+
+
