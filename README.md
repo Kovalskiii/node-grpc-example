@@ -1,4 +1,4 @@
-# Node.js (express.js) - gRPC realisation example
+# Node.js (express.js) - gRPC realisation example(simple and file streaming)
 gRPC (gRPC Remote Procedure Calls) is a cross-platform high-performance remote procedure call (RPC) framework.
 https://grpc.io/
 
@@ -34,3 +34,13 @@ In postman execute get request http://localhost:8002/users/getUser/e4dab395-c140
 
 In response, you should see:
 ![responseExample.png](responseExample.png)
+
+
+For test file stream in postman execute post request http://localhost:8002/users/getUserFile , 
+and in body use:   
+{
+   "userId": "e4dab395-c140-4b7f-b289-e2cf008dc563",
+   "fileSrc": "private/user/e4dab395-c140-4b7f-b289-e2cf008dc563/file.png"
+}
+
+In response, you should see image

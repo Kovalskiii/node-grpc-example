@@ -4,6 +4,7 @@ package grpcService;
 
 service UserService {
   rpc GetUser (GetUserRequest) returns (GetUserResponse);
+  rpc GetUserFile (FileRequest) returns (stream FileChunk);
 }
 
 message GetUserRequest {
@@ -20,6 +21,17 @@ message GetUserPayload {
 message GetUserResponse {
   string message = 1;
   GetUserPayload payload = 2;
+}
+
+message FileRequest {
+  string fileSrc = 1;
+  string userId = 2;
+}
+
+message FileChunk {
+  bytes data = 1;
+  string fileMimeType = 2;
+  int64 fileSize = 3;
 }
 
 
